@@ -12,7 +12,7 @@ Content-Type: application/json
 
 {
     "title" : "The Godfather",
-    "year" : 'hola',
+    "year" : 1800,
     "director" : "Francis Ford Coppola",
     "duration" : 175,
     "poster" : "https://img.fruugo.com/product/4/49/14441494_max.jpg",
@@ -20,6 +20,14 @@ Content-Type: application/json
         "Crime",
         "Drama"
     ]
+}
+
+###
+PATCH http://localhost:3000/movies/04986507-b3ed-442c-8ae7-4c5df804f896
+Content-Type: application/json
+
+{
+    "year": 1993
 }
 
 
