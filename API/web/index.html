@@ -9,6 +9,7 @@
       border: 1px solid #ccc;
       padding: 1rem;
       margin-bottom: 1rem;
+      
     }
 
     img {
@@ -40,7 +41,7 @@
             const article = e.target.closest('article')
             const id = article.dataset.id
 
-            fetch(`http://localhost:1234/movies/${id}`, {
+            fetch(`http://localhost:3000/movies/${id}`, {
               method: 'DELETE'
             })
               .then(res => {

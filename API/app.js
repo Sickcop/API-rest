@@ -75,4 +75,24 @@ app.patch('/movies/:id', (req, res) => {
   return res.json(updatedMovie)
 })
 
+app.delete('/movies/:id', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  const { id } = req.params
+  const movieIndex = movies.findIndex(movie => movie.id === id)
+
+  if (movieIndex === -1) return res.json(404).json({ messa: 'Movie not found' })
+
+    movies.splice(movieIndex, 1)
+
+    return res.json({ message: 'Movie deleted' })
+
+})
+
+app.options('/movies/:id', (req, res) => {
+  
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Methods', '*')
+  res.send(200)
+})
+
 app.listen(port, () => console.log(`Example app listening on port http://localhost:${port}`))
