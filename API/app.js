@@ -5,7 +5,7 @@ const { validateMovie, validatePartialMovie } = require('./schemes/movieSchema.j
 
 
 const app = express()
-const port = process.env.PORT ?? 3000
+const PORT = process.env.PORT ?? 3000
 app.disable('x-powered-by')
 app.use(express.json())
 
@@ -90,9 +90,9 @@ app.delete('/movies/:id', (req, res) => {
 
 app.options('/movies/:id', (req, res) => {
   
-  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Con trol-Allow-Origin', '*')
   res.header('Access-Control-Allow-Methods', '*')
   res.send(200)
 })
 
-app.listen(port, () => console.log(`Example app listening on port http://localhost:${port}`))
+app.listen(PORT, () => console.log(`Example app listening on port http://localhost:${PORT}`))
